@@ -84,7 +84,7 @@
       <div class="money-box">
         <div class="chosed">已选择 <span>0</span>件商品</div>
         <div class="sumprice">
-          <em>总价（不含运费） ：</em>
+          <em>总价（不含运费） :</em>
           <i class="summoney">{{ totalPrice }}</i>
         </div>
         <div class="sumbtn">
@@ -130,6 +130,7 @@ export default {
         return Promise.reject(new Error(error.message));
       }
     }, 1000),
+    //通知仓库修改单个商品的状态
     async updateChecked(skuID, isChecked) {
       try {
         isChecked = isChecked == 1 ? 0 : 1;
@@ -179,6 +180,7 @@ export default {
       });
       return sum;
     },
+    //全选按钮根据所有商品状态改变自己勾选状态
     isAllChecked() {
       return this.cartInfoList.every((item) => item.isChecked == 1);
     },

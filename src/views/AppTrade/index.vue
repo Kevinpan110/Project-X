@@ -131,6 +131,7 @@ export default {
       detailArrayList: (state) => state.Trade.order.detailArrayList,
       orderId: (state) => state.Trade.orderId,
     }),
+    //用户默认地址
     userDefaultAddress() {
       return this.userAddress.find((item) => item.isDefault == 1) || [];
     },
@@ -140,6 +141,7 @@ export default {
       await this.$store.dispatch("userAddress");
       await this.$store.dispatch("userOrder");
     },
+    //修改默认地址
     changeDefaultAddress(address, userAddress) {
       userAddress.forEach((item) => {
         item.isDefault = "0";

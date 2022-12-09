@@ -21,11 +21,9 @@ const actions = {
   async submitOrder({commit},{tradeNo,data}){
     let result = await reqSubmitOrder(tradeNo,data);
     if(result.code==200){
-      console.log('submitOrdersuccess',result);
       commit('SUBMITORDER',result.data)
       return 'ok'
     }else{
-      console.log('submitOrderfail',result);
       return Promise.reject(new Error('提交订单失败'))
     }
   },

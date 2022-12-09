@@ -14,6 +14,7 @@ const actions = {
       return Promise.reject(new Error("更新勾选状态失败"));
     }
   },
+  //根据商品skuId发请求删除商品
   async deleteCartByID({ commit }, skuId) {
     let result = await reqDeleteCartById(skuId);
     if (result.code == 200) {
@@ -22,6 +23,7 @@ const actions = {
       return Promise.reject(new Error("更新勾选状态失败"));
     }
   },
+  //删除选中的商品
   deleteSelectedCart({ dispatch, getters }) {
     let AllResult = [];
     getters.cartList.cartInfoList.forEach( (item) => {

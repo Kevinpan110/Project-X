@@ -28,6 +28,9 @@ Vue.component(Button.name,Button)
 Vue.prototype.$msgbox = MessageBox;
 Vue.prototype.$alert = MessageBox.alert;
 
+//引入表单验证
+import '@/plugins/validate';
+
 new Vue({
   render: h => h(App),
   //注册路由

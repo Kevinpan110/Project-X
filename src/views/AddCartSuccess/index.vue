@@ -29,6 +29,7 @@ export default {
   mounted() {
   },
   computed: {
+    //取出sessionStorage中的数据
     skuInfo() {
       return JSON.parse(sessionStorage.getItem("SKUINFO"));
     },

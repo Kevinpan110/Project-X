@@ -13,6 +13,7 @@
         <a href="###">有趣</a>
         <a href="###">秒杀</a>
       </nav>
+      <!-- 三级联动 -->
       <transition name="sort">
         <div class="sort" @click="goSearch" v-show="show"  >
           <div class="all-sort-list2">
@@ -32,6 +33,7 @@
                   >{{ c1.categoryName }}</a
                 >
               </h3>
+            <!-- 二三级分类 -->
               <div class="item-list clearfix">
                 <div
                   class="subitem"
@@ -118,6 +120,7 @@ export default {
     enterShow(){
       this.show=true
     },
+    //如果路由不是/home，鼠标离开隐藏
     leaveHide(){
       if(this.$route.path!=='/home'){
         this.show=false

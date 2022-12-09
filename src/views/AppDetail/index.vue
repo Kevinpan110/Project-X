@@ -81,7 +81,6 @@
                 <dt class="title">{{ spu.saleAttrName }}</dt>
                 <dd
                   changepirce="0"
-                  
                   :class="{ active: spu1.isChecked == '1' }"
                   v-for="spu1 in spu.spuSaleAttrValueList"
                   :key="spu1.id"
@@ -383,6 +382,7 @@ export default {
     async addToCart(){
       try {
         await this.$store.dispatch('addToCart',{skuId:this.skuId,skuNum:this.goodNum});
+        //将商品信息存入sessionStorage
         sessionStorage.setItem('SKUINFO',JSON.stringify(this.skuInfo))
         this.$router.push({name:'addcartsuccess',params:{skuNum:this.goodNum}})
       } catch (error) {

@@ -1,6 +1,5 @@
 <template>
   <div class="paysuccess">
-
     <div class="success">
       <h3>
         <img src="./images/right.png" width="48" height="48">
@@ -13,7 +12,6 @@
         </p>
       </div>
     </div>
-
   </div>
 </template>
 

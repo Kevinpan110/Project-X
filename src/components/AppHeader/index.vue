@@ -66,6 +66,7 @@ export default {
   },
   methods: {
     goSearch() {
+      //合并搜索参数
       let location = {name:"search",params:{keyword:this.keyword||undefined}}
       location.query = this.$route.query
       this.$router.push(location)

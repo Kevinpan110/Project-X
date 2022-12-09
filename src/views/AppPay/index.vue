@@ -140,8 +140,8 @@ export default {
             // if (this.code == 200) {
               clearInterval(this.timer);
               this.timer = null;
-              done();
               this.$router.push('/paysuccess')
+              done();
             // }
           }
         },
@@ -164,11 +164,12 @@ export default {
   },
   beforeRouteLeave (to, from, next) {
     if(to.path.indexOf('/paysuccess')!=-1){
-      if(this.payCode==200){
-        next();
-      }else{
-        next(false)
-      }
+      // if(this.payCode==200){
+      //   next();
+      // }else{
+      //   next(false)
+      // }
+      next()
     }else{
       next()
     }
